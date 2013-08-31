@@ -20,23 +20,140 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>Hoytoca</title>
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="cleartype" content="on">
+        
+        <!-- Lungo - Stylesheets -->
+        <link rel="stylesheet" href="components/lungo/lungo.css">
+        <link rel="stylesheet" href="components/lungo/lungo.icon.css">
+        <link rel="stylesheet" href="components/lungo/lungo.theme.css">
+        <link rel="stylesheet" href="components/lungo/Lungo.widgets.icon.brand.css">
+        
+        <!-- Font Awesone - Stylesheets -->
+        <link rel="stylesheet" href="app/assets/fonts/font-awesome/css/font-awesome.min.css">
+        
+        <!-- My - Stylesheets -->
+        <link rel="stylesheet" href="app/assets/css/css.css">
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <section id="main" data-transition="slide" class="">
+            <header class="theme-header">
+                <nav class="on-left box">
+                    <a href="#features" data-view-aside="features" data-icon="menu"></a>
+                </nav>
+                <div class="centered title with-subtitle">Hoytoca</div>
+               <nav class="on-right" data-position="right">
+                   <a data-view-section="buscar" data-icon="search"></a>
+               </nav>
+            </header>
+            <article id="main-article" class="active block scroll">
+            	<div data-control="carousel" class="carousel-grande">
+                    <div>
+                        <div align="center">
+                            <img src="http://lorempixel.com/320/418/food/">
+                        </div>
+                        <div align="center">
+                            <img src="http://lorempixel.com/320/418/sports/">
+                        </div>
+                    </div>
+                </div>
+                <div class="lista indented">
+                    <ul class="list moteles indented motel">
+                    	<li>
+                        	<span class="portada-mini">
+                            	<img src="" class="portadin">
+                            </span>
+                            <span class="datos">
+                            	<span class="count tag overtag">Desde $<span class="desde"></span></span>
+                            	<span class="nombre"></span><a data-icon="thumbs-up" class="on-right icono-grande"></a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        
+        <!-- PHONEGAP -->
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <!-- Lungo - Dependencies -->
+		<script src="components/quojs/quo.js"></script>
+        <script src="components/lungo/lungo.js"></script>
+        <!-- Transparency - Dependencies -->
+        <script src="components/jquery/jquery-1.9.0.min.js"></script>
+        <!-- TRANSPARENCY -->
+        <script src="components/transparency/transparency.min.js"></script>
+        <!-- Eventos -->
+        <script src="app/events/load.js"></script>
+		<script src="app/events/eventMain.js"></script>
+        <script src="app/events/eventListado.js"></script>
+        <script src="app/events/eventFavoritos.js"></script>
+        <script src="app/events/eventBuscar.js"></script>
+        <script src="app/events/eventAgregar.js"></script>
+        <script src="app/events/eventMapa.js"></script>
+        <script src="app/events/eventCerca.js"></script>
+        <script src="app/events/ajax.js"></script>
+       
+       <script>
+        Lungo.init({
+            name: 'Hoytoca',
+            version: '1.0',
+            resources: [
+						'app/sections/aside.html',
+                        'app/sections/catalogo.html',
+						'app/sections/favoritos.html',
+						'app/sections/cerca.html',
+						'app/sections/buscar.html',
+						'app/sections/agregar.html',
+						'app/sections/carousel.html'
+					   ]
+        });
+		var motel,directives;
+		motel = [
+			{
+			  portadin: 'http://lorempixel.com/320/418/food/',
+			  desde: "432",
+			  nombre: "<i>nombre</i>",
+			  //span: "Goodbye!"
+			},
+			{
+			  portadin: "http://lorempixel.com/320/418/food/",
+			  desde: "343",
+			  nombre: "<i>nombre</i>",
+			  //span: "Goodbye!"
+			},
+			{
+			  portadin: "http://lorempixel.com/320/418/food/",
+			  desde: "234",
+			  nombre: "nombre",
+			  //span: "Goodbye!"
+			}
+		];
+		directives = {
+		  portadin: {
+			src: function(params) {
+			  return  this.portadin;
+			}
+		  },
+		  nombre: {
+			html: function(params) {
+			  return  this.nombre;
+			}
+		  },
+		  desde: {
+			html: function() {
+			  return  "<i>"+this.desde+"</i>";
+			}
+		  }
+		};
+		//Transparency.render(document.getElementById('contenido'), hello);
+		$('.motel').render(motel,directives);
+
+    </script>
+       
     </body>
 </html>
