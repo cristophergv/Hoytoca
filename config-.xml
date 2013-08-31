@@ -2,10 +2,10 @@
 <widget id="mx.hoytoca.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Hoytoca</name>
     <description>
-        Aplicación hoytoca.mx
+        Hello World sample application that responds to the deviceready event.
     </description>
-    <author email="hola@hoytoca.mx" href="http://hoytoca.mx">
-        Hoytoca
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
@@ -47,5 +47,5 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
-    <access origin="*" />
+    <access origin="http://127.0.0.1*" />
 </widget>
