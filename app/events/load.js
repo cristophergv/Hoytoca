@@ -5,10 +5,54 @@ var App = (function(lng, undefined) {
 })(Lungo);
 Lungo.Events.init({    
 	'load section#main': function(event) {
-		/*var el = $$('section#main [data-control=carousel]')[0];
-		var example = Lungo.Element.Carousel(el, function(index, element) {
-			//Lungo.dom("section#carousel .title span").html(index + 1);
-		});*/
+		var afterNotification = function(){
+			Lungo.Notification.hide();
+		};
+		/*Lungo.Notification.show(
+			"exchange",                //Icon
+			"Cargando moteles...",    //Title
+			3,                       //Seconds
+			afterNotification       //Callback function
+		);*/
+		$$.ajax({
+			type: 'GET', 
+			url: getMoteles + "?include=id,title,attachments,thumbnail,thumbnail_images&count=5",
+			dataType: 'json',
+			timeout:8000,
+			success: function(destacados) {
+					$('.destacados').render(destacados.posts,dirURL);
+					var el = $$('section#main [data-control=carousel]')[0];
+					var example = Lungo.Element.Carousel(el, function(index, element) {
+						//Lungo.dom("section#carousel .title span").html(index + 1);
+					});
+			},//sucess
+			error: function(xhr, type) { 
+				navigator.notification.alert(
+					'¡No se logro cargar los primeros moteles',  
+					afterNotification,         
+					'Dress4aday',           
+					'Cerrar'               
+				);
+			 }//error
+		});//AJAX
+		//Cargamos los primeros 10
+		$$.ajax({
+			type: 'GET', 
+			url: getMoteles + "?include=id,title,attachments,thumbnail,custom_fields,thumbnail_images",
+			dataType: 'json',
+			timeout:8000,
+			success: function(ultimos) {
+					$('.moteles').render(ultimos.posts,dirURL);
+			},//sucess
+			error: function(xhr, type) { 
+				navigator.notification.alert(
+					'¡No se logro cargar los primeros moteles',  
+					afterNotification,         
+					'Dress4aday',           
+					'Cerrar'               
+				);
+			 }//error
+		});//AJAX
 	},
 	'load section#catalogo': function(event) {
 	},
@@ -20,21 +64,4 @@ Lungo.Events.init({
 	},
 	'load section#cerca': function(event) {
 	},
-	'load section#carousel': function(event) {
-		var el = $$('[data-control=carousel]')[0];
-		var example = Lungo.Element.Carousel(el, function(index, element) {
-			Lungo.dom("section#carousel .title span").html(index + 1);
-		});
-	},
-	'load section#pull': function(event) {
-        App.pull = new Lungo.Element.Pull('section#pull article', {
-            onPull: "Pull down to refresh",
-            onRelease: "Release to get new data",
-            onRefresh: "Refreshing...",
-            callback: function() {
-                alert("Pull & Refresh completed!");
-                App.pull.hide();
-            }
-        });
-    },
 });
