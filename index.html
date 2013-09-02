@@ -54,24 +54,21 @@
             </header>
             <article id="main-article" class="active block scroll">
             	<div data-control="carousel" class="carousel-grande">
-                    <div>
-                        <div align="center">
-                            <img src="http://lorempixel.com/320/418/food/">
-                        </div>
-                        <div align="center">
-                            <img src="http://lorempixel.com/320/418/sports/">
+                    <div class="destacados">
+                        <div align="center" class="attachments">
+                            <img src="" class="url">
                         </div>
                     </div>
                 </div>
                 <div class="lista indented">
-                    <ul class="list moteles indented motel">
+                    <ul class="list moteles indented">
                     	<li>
-                        	<span class="portada-mini">
-                            	<img src="" class="portadin">
+                        	<span class="portada-mini attachments">
+                            	<img src="" class="url">
                             </span>
                             <span class="datos">
                             	<span class="count tag overtag">Desde $<span class="desde"></span></span>
-                            	<span class="nombre"></span><a data-icon="thumbs-up" class="on-right icono-grande"></a>
+                            	<span class="title"></span><a data-icon="thumbs-up" class="on-right icono-grande"></a>
                             </span>
                         </li>
                     </ul>
@@ -89,6 +86,7 @@
         <!-- TRANSPARENCY -->
         <script src="components/transparency/transparency.min.js"></script>
         <!-- Eventos -->
+        <script src="app/events/constantes.js"></script>
         <script src="app/events/load.js"></script>
 		<script src="app/events/eventMain.js"></script>
         <script src="app/events/eventListado.js"></script>
@@ -113,7 +111,7 @@
 						'app/sections/carousel.html'
 					   ]
         });
-		var motel,directives;
+		/*var motel,directives;
 		motel = [
 			{
 			  portadin: 'http://lorempixel.com/320/418/food/',
@@ -153,7 +151,7 @@
 		};
 		//Transparency.render(document.getElementById('contenido'), hello);
 		$('.motel').render(motel,directives);
-
+		*/
     </script>
        
     </body>

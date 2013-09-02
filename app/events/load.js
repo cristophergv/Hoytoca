@@ -5,10 +5,10 @@ var App = (function(lng, undefined) {
 })(Lungo);
 Lungo.Events.init({    
 	'load section#main': function(event) {
-		var el = $$('section#main [data-control=carousel]')[0];
+		/*var el = $$('section#main [data-control=carousel]')[0];
 		var example = Lungo.Element.Carousel(el, function(index, element) {
 			//Lungo.dom("section#carousel .title span").html(index + 1);
-		});
+		});*/
 	},
 	'load section#catalogo': function(event) {
 	},
