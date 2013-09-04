@@ -62,15 +62,15 @@
                 </div>
                 <div class="lista indented">
                     <ul class="list moteles indented">
-                    	<li>
+                    	<li><a href="#motel" data-view-section="motel">
                         	<span class="portada-mini attachments">
                             	<img src="" class="url">
                             </span>
                             <span class="datos">
-                            	<span class="count tag overtag">Desde $<span class="desde"></span></span>
-                            	<span class="title"></span><a data-icon="thumbs-up" class="on-right icono-grande"></a>
+                            	<span class="count tag overtag">Desde $<span class="desde precio"></span></span>
+                            	<span class="title"></span><a data-icon="thumbs-up" class="on-right icono-grande manita"></a>
                             </span>
-                        </li>
+                       </a> </li>
                     </ul>
                 </div>
             </article>
@@ -104,6 +104,7 @@
             resources: [
 						'app/sections/aside.html',
                         'app/sections/catalogo.html',
+						'app/sections/motel.html',
 						'app/sections/favoritos.html',
 						'app/sections/cerca.html',
 						'app/sections/buscar.html',
@@ -111,47 +112,6 @@
 						'app/sections/carousel.html'
 					   ]
         });
-		/*var motel,directives;
-		motel = [
-			{
-			  portadin: 'http://lorempixel.com/320/418/food/',
-			  desde: "432",
-			  nombre: "<i>nombre</i>",
-			  //span: "Goodbye!"
-			},
-			{
-			  portadin: "http://lorempixel.com/320/418/food/",
-			  desde: "343",
-			  nombre: "<i>nombre</i>",
-			  //span: "Goodbye!"
-			},
-			{
-			  portadin: "http://lorempixel.com/320/418/food/",
-			  desde: "234",
-			  nombre: "nombre",
-			  //span: "Goodbye!"
-			}
-		];
-		directives = {
-		  portadin: {
-			src: function(params) {
-			  return  this.portadin;
-			}
-		  },
-		  nombre: {
-			html: function(params) {
-			  return  this.nombre;
-			}
-		  },
-		  desde: {
-			html: function() {
-			  return  "<i>"+this.desde+"</i>";
-			}
-		  }
-		};
-		//Transparency.render(document.getElementById('contenido'), hello);
-		$('.motel').render(motel,directives);
-		*/
     </script>
        
     </body>

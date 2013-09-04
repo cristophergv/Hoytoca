@@ -14,9 +14,10 @@ Lungo.Events.init({
 			3,                       //Seconds
 			afterNotification       //Callback function
 		);*/
+		//Cargamos los moteles de la Categoria: Destacados App Banner Portada ID: 11
 		$$.ajax({
 			type: 'GET', 
-			url: getMoteles + "?include=id,title,attachments,thumbnail,thumbnail_images&count=5",
+			url: getMoteles + "?include=id,title,attachments,thumbnail,thumbnail_images&cat=11&orderby=rand",
 			dataType: 'json',
 			timeout:8000,
 			success: function(destacados) {
@@ -35,10 +36,10 @@ Lungo.Events.init({
 				);
 			 }//error
 		});//AJAX
-		//Cargamos los primeros 10
+		//Cargamos los moteles de la Categoria: Destacados App Lista Portada ID: 12
 		$$.ajax({
 			type: 'GET', 
-			url: getMoteles + "?include=id,title,attachments,thumbnail,custom_fields,thumbnail_images",
+			url: getMoteles + "?include=id,title,attachments,thumbnail,custom_fields,thumbnail_images&cat=12&orderby=rand",
 			dataType: 'json',
 			timeout:8000,
 			success: function(ultimos) {

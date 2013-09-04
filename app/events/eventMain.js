@@ -14,6 +14,11 @@ dirURL = { // Parseamos la URL de json para mandarla al SRC del template HTML
 			}
 		}
 	},
+	"precio": {
+		html: function() { 
+			return this.custom_fields.precio; 
+		}
+	}
 };
 
 Lungo.dom('#main').on('load', function(event) {

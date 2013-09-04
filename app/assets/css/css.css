@@ -52,6 +52,7 @@ body > section > header .title {
 .carousel-grande {
 	max-height:220px;
 	width:100%;
+	height:178px;
 }
 .carousel-grande img {
 	max-width:100% !important;
@@ -64,6 +65,7 @@ body > section > header .title {
 	display:inline-block;
 }
 .moteles li {
+	display:inline-block;
 	float:left;
 	max-width:48.5%;
 	padding:0px !important;
@@ -72,6 +74,7 @@ body > section > header .title {
 	width:48.5%;
 	overflow:hidden;
 	max-height:142px;
+	position:relative;
 }
 .moteles li:nth-child(odd) {
 	margin-right:3%;
@@ -83,13 +86,18 @@ body > section > header .title {
 	height:100px;
 }
 .moteles li .portada-mini img{
-	max-width:100%;
-	height:auto;
+	width:auto;
+	height:120px;
 }
 .moteles li .datos{
-	padding:1em 0.4em 1em 0.4em !important;
+	padding:0.7em 0.4em 0.7em 0.4em !important;
 	display:block;
 	font-weight:bold !important;
+}
+.moteles li .manita {
+	position:absolute;
+	right:2px;
+	bottom:7px;
 }
 .moteles li .datos .overtag {
 	height: auto !important;
