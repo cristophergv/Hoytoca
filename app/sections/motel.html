@@ -3,16 +3,57 @@
         <nav class="on-left box">
             <a href="#main" data-view-section="back" data-icon="chevron-left"></a>
         </nav>
-        <div class="centered title with-subtitle">Motel</div>
+        <div class="centered title"><img src="app/assets/img/logo-encabezado.png" /></div>
         <nav class="on-right" data-position="right">
             <a data-view-section="buscar" data-icon="search"></a>
         </nav>
     </header>
-    <article id="favoritos" class="list indented scroll colorWhite">
-        <div id="contenido">
+    <article id="motel-informacion" class="list scroll colorWhite">
+    	<div data-control="carousel" class="galeria-motel">
+            <div class="galeria">
+                <div align="center">
+                	<img src="http://www.hoytoca.mx/web/wp-content/uploads/2013/02/Marbella.jpg">
+                </div>
+                <div align="center">
+                    <img src="http://www.hoytoca.mx/web/wp-content/uploads/2013/02/Marbella.jpg">
+                </div>
+                <div align="center">
+                	<img src="http://www.hoytoca.mx/web/wp-content/uploads/2013/02/Marbella.jpg">
+                </div>
+                <div align="center">
+                    <img src="http://www.hoytoca.mx/web/wp-content/uploads/2013/02/Marbella.jpg">
+                </div>
+            </div>
+            <div class="motel-titulo">El Arem</div>
+            <span class="on-right distancia" data-icon="flag">A 13.4 Km</span>
+        </div>
+        <!-- <nav data-control="groupbar" class="motel-menu with-labels">
+        	<a href="" data-view-article="#informacion"  data-icon="book" data-label="Informacion"></a>
+        	<a href="" data-view-article="#comentarios" data-icon="comment" data-label="Comentarios" data-count="20"></a>
+            <a href="" data-view-article="#mapa" data-icon="globe" data-label="Como llegar"></a>
+        </nav>-->
+        <ul class="list indented">
+        	<li class="direccion arrow" data-icon="map-marker">Pavo #394, Colonía Centro, Guadalajara, Jalisco, Mexico</li>
+            <li data-icon="phone">(33) 35343454</li>
+        </ul>
+        <div id="motel-contenido" class="indented">
             <div id="hello">Motel</div>
             <div id="hi"></div>
             <span></span>
         </div>
     </article>
+    <article id="motel-mapa" class="">
+        <div id="contenido">
+            <div id="hello">Mapa del motel</div>
+            <div id="hi"></div>
+            <span></span>
+        </div>
+    </article>
+    <footer class="motel-footer">
+    	<nav data-control="groupbar" class="motel-menu with-labels">
+        	<a href="" data-view-article="#informacion"  data-icon="share-alt" data-label="Compartir"></a>
+            <a href="" data-view-article="#informacion"  data-icon="comment-alt" data-label="Comentar"></a>
+        	<a href="" data-view-article="#comentarios" data-icon="thumbs-up" data-label="Favoritos"></a>
+        </nav>
+    </footer>
 </section>

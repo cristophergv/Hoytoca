@@ -47,7 +47,7 @@
                 <nav class="on-left box">
                     <a href="#features" data-view-aside="features" data-icon="menu"></a>
                 </nav>
-                <div class="centered title with-subtitle">Hoytoca</div>
+                <div class="centered title"><img src="app/assets/img/logo-encabezado.png" /></div>
                <nav class="on-right" data-position="right">
                    <a data-view-section="buscar" data-icon="search"></a>
                </nav>
@@ -57,20 +57,31 @@
                     <div class="destacados">
                         <div align="center" class="attachments">
                             <img src="" class="url">
+                            <div class="datos">
+                            	<span class="title"></span><br/>
+                                <span class="direccion_portada"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="lista indented">
                     <ul class="list moteles indented">
-                    	<li><a href="#motel" data-view-section="motel">
-                        	<span class="portada-mini attachments">
-                            	<img src="" class="url">
-                            </span>
-                            <span class="datos">
-                            	<span class="count tag overtag">Desde $<span class="desde precio"></span></span>
-                            	<span class="title"></span><a data-icon="thumbs-up" class="on-right icono-grande manita"></a>
-                            </span>
-                       </a> </li>
+                    	<li>
+                        	<a href="#motel" data-view-section="motel">
+                                <span class="portada-mini attachments">
+                                    <img src="" class="url">
+                                </span>
+                                <span class="datos">
+                                    <span class="count tag overtag">Desde $<span class="desde precio"></span></span>
+                                    <span class="title"></span><br/>
+                                    <span class="direccion"></span>
+                                </span>
+                      		 </a>
+                             <div class="interaccion">
+                             	<span class="boton"  data-icon="comment">45</span>
+                                <span  class="boton" data-icon="flag">Como llegar</span>
+                             </div>
+                       		</li>
                     </ul>
                 </div>
             </article>
@@ -81,15 +92,18 @@
         <!-- Lungo - Dependencies -->
 		<script src="components/quojs/quo.js"></script>
         <script src="components/lungo/lungo.js"></script>
+        <!-- Js - Dependencies -->
+        <script src="app/assets/js/constantes.js"></script>
         <!-- Transparency - Dependencies -->
         <script src="components/jquery/jquery-1.9.0.min.js"></script>
         <!-- TRANSPARENCY -->
         <script src="components/transparency/transparency.min.js"></script>
         <!-- Eventos -->
-        <script src="app/events/constantes.js"></script>
         <script src="app/events/load.js"></script>
+        <script src="app/events/eventAside.js"></script>
 		<script src="app/events/eventMain.js"></script>
         <script src="app/events/eventListado.js"></script>
+        <script src="app/events/eventMotel.js"></script>
         <script src="app/events/eventFavoritos.js"></script>
         <script src="app/events/eventBuscar.js"></script>
         <script src="app/events/eventAgregar.js"></script>
@@ -108,6 +122,7 @@
 						'app/sections/favoritos.html',
 						'app/sections/cerca.html',
 						'app/sections/buscar.html',
+						'app/sections/promociones.html',
 						'app/sections/agregar.html',
 						'app/sections/carousel.html'
 					   ]
