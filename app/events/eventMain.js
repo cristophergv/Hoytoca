@@ -35,7 +35,7 @@ directivaMain = { // Parseamos la URL de json para mandarla al SRC del template 
 Lungo.dom('#main').on('load', function(event) {
 	if(accesado == 0) {
 		//Cargamos los moteles de la Categoria: Destacados App Banner Portada ID: 11
-		Lungo.Notification.show();
+		//Lungo.Notification.show();
 		$$.ajax({
 			type: 'GET', 
 			url: getMoteles + "?include=id,title,attachments,thumbnail,custom_fields,thumbnail_images&cat=11&orderby=rand",
@@ -48,13 +48,13 @@ Lungo.dom('#main').on('load', function(event) {
 						//Lungo.dom("section#carousel .title span").html(index + 1);
 					});
 					accesado = 1;
-					Lungo.Notification.hide();
+					//Lungo.Notification.hide();
 			},//sucess
 			error: function(xhr, type) { 
 				navigator.notification.alert(
-					'¡No se logro cargar los primeros moteles',  
+					'¡No se logro descargar la información',  
 					afterNotification,         
-					'Dress4aday',           
+					'Hoytoca',           
 					'Cerrar'               
 				);
 			 }//error
@@ -72,7 +72,7 @@ Lungo.dom('#main').on('load', function(event) {
 				navigator.notification.alert(
 					'¡No se logro descargar la información',  
 					afterNotification,         
-					'Dress4aday',           
+					'Hoytoca',           
 					'Cerrar'               
 				);
 			 }//error
